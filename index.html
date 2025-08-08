@@ -33,8 +33,6 @@
         background-color: #00ff00;
         width: 0%;
     }
-
-    /* EXTREME ALERT STYLE */
     .big-alert {
         color: white;
         background-color: red;
@@ -93,6 +91,7 @@ function progressBar(percent, speed = 50) {
 }
 
 async function hackSequence() {
+    terminal.innerHTML = "";
     await printLine("[BOOTING SYSTEM]...");
     await printLine("Loading network drivers... [OK]");
     await printLine("Scanning local subnet 192.168.x.x ...");
@@ -104,8 +103,7 @@ async function hackSequence() {
     await printLine("Deploying payload...");
     await progressBar(100, 10);
 
-    // EXTREME BIG ALERT
-    terminal.innerHTML += `\n<div class="big-alert">⚠ SYSTEM FUCKED BY GENTLEMAN ⚠</div>\n`;
+    terminal.innerHTML += `\n<div class="big-alert">⚠ SYSTEM BREACH DETECTED ⚠</div>\n`;
 
     await printLine("Encrypting user files...");
     await progressBar(100, 8);
@@ -118,12 +116,13 @@ async function hackSequence() {
     await printLine("💀💀💀 SYSTEM COMPROMISED 💀💀💀");
     await printLine("");
     await new Promise(r => setTimeout(r, 2000));
-    await printLine("...errorrr!");
+    await printLine("ERROORRROOORRRROOORRROOOOORRROOOOORRROOOORRRRROOOOORR!");
+    
+    // Loop again after 3 seconds
+    setTimeout(hackSequence, 3000);
 }
 
 hackSequence();
 </script>
 </body>
 </html>
-
-
